@@ -1,4 +1,7 @@
-import Cell
+#!/usr/bin/python
+
+import argparse
+import sys,Cell
 
 class SudokuSolver:
 
@@ -76,15 +79,21 @@ class SudokuSolver:
 
     def Start_Solve(self,Grid):
         if self.Solver(Grid,0,0):
+            print("Result:")
             self.PrintGrid(Grid)
         else:
             print("No Solutioon for problem")
 
-# Test=SudokuSolver(9,"001734000097000084006000500400100020000070300050069008000200000629800010800500096")
 
-
-SolveMe=SudokuSolver(9,"000003100693001020512009000000000094021704580340000000000100978050800341008900000")
-SolveMe.Start_Solve(SolveMe.Grid)
+if __name__=="__main__":
+    parser = argparse.ArgumentParser(description='Sudoku Solver')
+    parser.add_argument('Size', type=int,
+                        help='An integer representing the Grid Size e.g (9x9)')
+    parser.add_argument('Length', type=str,
+                        help='An 81 Character String going Row-Row -->> where its the starter values for the Puzzle')
+    args = parser.parse_args()
+    SolveMe=SudokuSolver(args.Size,args.Length)
+    SolveMe.Start_Solve(SolveMe.Grid)
 
 
 
