@@ -13,4 +13,4 @@ USAGE:
 
 SizeOfGrid - Integer value for (Integer x Integer) Grid Size
 
-SudokuString - An 81 Length String where it goes -->> Row to Row -->> and fills with 0s where the value is unknown ??
+SudokuString - A **(Size*Size)** Length String where it goes -->> Row to Row -->> and fills with 0s where the value is unknown ??
